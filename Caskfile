@@ -22,3 +22,4 @@ brew cask install spotify 2> /dev/null
 brew cask install transmission 2> /dev/null
 brew cask install virtualbox 2> /dev/null
 brew cask install vlc 2> /dev/null
+brew cask install textexpander 2> /dev/null

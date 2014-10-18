@@ -45,11 +45,14 @@ brew install nginx
 ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 
-# Install PHP 5.5
+# Install PHP 5.5, some extensions and Composer
 brew install homebrew/php/php55
 brew install homebrew/php/php55-apcu
 brew install homebrew/php/php55-imagick
 brew install homebrew/php/php55-xdebug
+ln -sfv /usr/local/opt/php55/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+brew install composer
 
 # Remove outdated versions from the cellar
 brew cleanup

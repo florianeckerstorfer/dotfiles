@@ -38,6 +38,7 @@ brew install imagemagick --with-webp
 brew install node
 brew install tree
 brew install spark
+brew install pandoc
 
 # Install Nginx & start at login
 brew install nginx

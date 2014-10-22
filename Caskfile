@@ -24,6 +24,7 @@ brew cask install omnifocus 2> /dev/null
 brew cask install onepassword 2> /dev/null
 brew cask install papers 2> /dev/null
 brew cask install seil 2> /dev/null
+brew cask install skype 2> /dev/null
 brew cask install spotify 2> /dev/null
 brew cask install textexpander 2> /dev/null
 brew cask install transmission 2> /dev/null

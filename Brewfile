@@ -51,10 +51,14 @@ brew install homebrew/php/php55 --without-apache --with-fpm --with-mysql
 brew install homebrew/php/php55-apcu
 brew install homebrew/php/php55-imagick
 brew install homebrew/php/php55-xdebug
-brew install mysql
 ln -sfv /usr/local/opt/php55/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
 brew install composer
+
+# Install MySQL
+brew install mysql
+ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 # Remove outdated versions from the cellar
 brew cleanup

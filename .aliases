@@ -10,6 +10,7 @@ alias -- -="cd -"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
@@ -144,3 +145,4 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 
 # Show visualization of Git activity
 alias git-activity="git shortlog -s | cut -f1 | spark"
+

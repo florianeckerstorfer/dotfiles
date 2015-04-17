@@ -146,3 +146,6 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 # Show visualization of Git activity
 alias git-activity="git shortlog -s | cut -f1 | spark"
 
+# Laravel Homestead Virtual Box
+alias lavm="ssh vagrant@127.0.0.1 -p 2222"
+

@@ -46,13 +46,13 @@ brew install nginx
 ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 
-# Install PHP 5.5, some extensions and Composer
-brew install homebrew/php/php55 --without-apache --with-fpm --with-mysql
-brew install homebrew/php/php55-apcu
-brew install homebrew/php/php55-imagick
-brew install homebrew/php/php55-xdebug
-ln -sfv /usr/local/opt/php55/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+# Install PHP 5.6, some extensions and Composer
+brew install homebrew/php/php56 --without-apache --with-fpm --with-mysql
+brew install homebrew/php/php56-apcu
+brew install homebrew/php/php56-imagick
+brew install homebrew/php/php56-xdebug
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 brew install composer
 
 # Install MySQL

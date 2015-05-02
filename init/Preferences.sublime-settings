@@ -2,9 +2,9 @@
     "color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
     "default_encoding": "UTF-8",
     "default_line_ending": "unix",
-    "detect_indentation": false,
+    "detect_indentation": true,
     "draw_white_space": "all",
-    "ensure_newline_at_eof_on_save": false,
+    "ensure_newline_at_eof_on_save": true,
     "file_exclude_patterns":
     [
         "*.pyc",
@@ -38,18 +38,17 @@
     ],
     "folder_exclude_patterns":
     [
-        ".git",
-        "node_modules"
+        ".git"
     ],
-    "font_face": "Monaco",
-    "font_size": 13,
+    "font_face": "Input Mono Compressed",
+    "font_size": 14,
     "highlight_modified_tabs": true,
     "hot_exit": false,
     "ignored_packages":
     [
         "Vintage"
     ],
-    "line_padding_bottom": 3,
+    "line_padding_bottom": 8,
     "match_brackets": true,
     "match_brackets_angle": true,
     "remember_open_files": false,

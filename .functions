@@ -244,3 +244,83 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# $ copy pwd
+# => puts the current path in your clipboard
+#
+# $ copy !!
+# => puts the results of the previous command in your clipboard
+#
+# $ copy curl http://brettterpstra.com/bookmarklets/answered.js
+# => puts the "answered" bookmarklet on the clipboard
+#
+# $ curl http://brettterpstra.com/bookmarklets/answered.js | copy
+# => same as above, just an alias for `| pbcopy`
+#
+# $ copy ~/.bash_profile ~/.bashrc ~/.inputrc
+# => puts the concatenated contents of your login profiles
+#    in the clipboard
+#
+# $ copy *.{md,markdown,mmd,mdown}
+# => copies text of all the Markdown files in the current directory
+#
+# $ copy just dicking around in the shell because 6 IN THE MORNING
+# => puts text on your clipboard
+#
+# $ date | copy
+# => puts the current date in your clipboard via piped output
+copy() {
+	if [[ $1 =~ ^-?[hH] ]]; then
+
+		echo "Intelligently copies command results, text file, or raw text to"
+		echo "OS X clipboard"
+		echo
+		echo "Usage: copy [command or text]"
+		echo "  or pipe a command: [command] | copy"
+		return
+	fi
+
+	local output
+	local res=false
+	local tmpfile="${TMPDIR}/copy.$RANDOM.txt"
+	local msg=""
+
+	if [[ $# == 0 ]]; then
+		output=$(cat)
+		msg="Input copied to clipboard"
+		res=true
+	else
+		local cmd=""
+		for arg in $@; do
+			cmd+="\"$(echo -en $arg|sed -E 's/"/\\"/g')\" "
+		done
+		output=$(eval "$cmd" 2> /dev/null)
+		if [[ $? == 0 ]]; then
+			msg="Results of command are in the clipboard"
+			res=true
+		else
+			if [[ -f $1 ]]; then
+				output=""
+				for arg in $@; do
+					if [[ -f $arg ]]; then
+						type=`file "$arg"|grep -c text`
+						if [ $type -gt 0 ]; then
+							output+=$(cat $arg)
+							msg+="Contents of $arg are in the clipboard.\n"
+							res=true
+						else
+							msg+="File \"$arg\" is not plain text.\n"
+						fi
+					fi
+				done
+			else
+				output=$@
+				msg="Text copied to clipboard"
+				res=true
+			fi
+		fi
+	fi
+
+	$res && echo -ne "$output" | pbcopy -Prefer txt
+	echo -e "$msg"
+}

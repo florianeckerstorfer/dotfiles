@@ -54,5 +54,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Change title bar
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+# export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 

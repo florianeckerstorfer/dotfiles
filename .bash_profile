@@ -56,3 +56,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # Change title bar
 # export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
+# Fuck
+eval $(thefuck --alias)

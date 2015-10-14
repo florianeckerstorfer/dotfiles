@@ -41,6 +41,9 @@ brew install spark
 brew install z
 brew install pandoc
 
+# Nice Git headsup
+brew install michaeldfallen/formula/git-radar
+
 # Install Nginx & start at login
 brew install nginx
 ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
